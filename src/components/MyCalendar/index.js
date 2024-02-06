@@ -18,8 +18,8 @@ export default function MyCalendar({
   styleInput,
   placeholder,
   label2,
-  iconColor = colors.primary,
-  textColor = colors.primary,
+  iconColor = colors.white,
+  textColor = colors.white,
   styleLabel,
   colorIcon = colors.primary,
   data = [],
@@ -52,7 +52,6 @@ export default function MyCalendar({
         borderRadius: 10,
         marginTop: 5,
         fontFamily: fonts.secondary[600],
-        borderColor: colors.primary,
       }}>
         <Text style={{
           position: 'absolute',

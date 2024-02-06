@@ -25,12 +25,21 @@ import {
   GayaBelajarVisual,
   GayaBelajarAudio,
   GayaBelajarReading,
+  
 
   GayaBelajarKinaesthetic,
   Diagnosa2,
   Periksagigimu,
   Gigilubang,
   TumpatanGigi,
+  PaketUmrah,
+  Pendaftaran,
+  UpdateSeat,
+  Pembayaran,
+  Saldoku,
+  DataJamaah,
+  DataJamaah2,
+  Royalti,
 
 
 } from '../pages';
@@ -48,7 +57,6 @@ const MainApp = () => {
   return (
     <Tab.Navigator initialRouteName='Produk' tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Logout" component={Login} />
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
   );
@@ -56,7 +64,7 @@ const MainApp = () => {
 
 export default function Router() {
   return (
-    <Stack.Navigator initialRouteName='MainApp'>
+    <Stack.Navigator initialRouteName=''>
       <Stack.Screen
         name="Splash"
         component={Splash}
@@ -95,8 +103,8 @@ export default function Router() {
       />
 
 <Stack.Screen
-        name="Diagnosa"
-        component={Diagnosa}
+        name="PaketUmroh"
+        component={PaketUmrah}
         options={{
           headerShown: false,
 
@@ -106,8 +114,8 @@ export default function Router() {
 
       
 <Stack.Screen
-        name="Diagnosa2"
-        component={Diagnosa2}
+        name="Pendaftaran"
+        component={Pendaftaran}
         options={{
           headerShown: false,
 
@@ -116,8 +124,8 @@ export default function Router() {
 
 
 <Stack.Screen
-        name="Periksagigimu"
-        component={Periksagigimu}
+        name="UpdateSeat"
+        component={UpdateSeat}
         options={{
           headerShown: false,
 
@@ -125,8 +133,8 @@ export default function Router() {
       />
 
 <Stack.Screen
-        name="Gigilubang"
-        component={Gigilubang}
+        name="Pembayaran"
+        component={Pembayaran}
         options={{
           headerShown: false,
 
@@ -134,8 +142,8 @@ export default function Router() {
       />
 
 <Stack.Screen
-        name="TumpatanGigi"
-        component={TumpatanGigi}
+        name="Saldoku"
+        component={Saldoku}
         options={{
           headerShown: false,
 
@@ -145,8 +153,8 @@ export default function Router() {
 
 
 <Stack.Screen
-        name="KursionerVark"
-        component={KursionerVark}
+        name="Datajamaah"
+        component={DataJamaah}
         options={{
           headerShown: false,
 
@@ -154,8 +162,8 @@ export default function Router() {
       />
 
 <Stack.Screen
-        name="BelajarVisual"
-        component={GayaBelajarVisual}
+        name="DataJamaahDetail"
+        component={DataJamaah2}
         options={{
           headerShown: false,
 
@@ -231,8 +239,8 @@ export default function Router() {
       />
 
       <Stack.Screen
-        name="Artikel"
-        component={Artikel}
+        name="Royalti"
+        component={Royalti}
         options={{
           headerShown: false,
         }}

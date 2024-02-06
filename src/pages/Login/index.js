@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, Animated, View, Image, ScrollView, ActivityIndicator, TouchableOpacity, BackHandler, Alert, Linking } from 'react-native';
+import { StyleSheet, Text, Animated, View, Image, ScrollView, ActivityIndicator, TouchableOpacity, BackHandler, Alert, Linking, ImageBackground } from 'react-native';
 import { fonts, windowWidth, colors, windowHeight, MyDimensi } from '../../utils';
 import { MyInput, MyGap, MyButton } from '../../components';
 import axios from 'axios';
@@ -8,6 +8,7 @@ import { showMessage } from 'react-native-flash-message';
 import { TouchableNativeFeedback } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native';
 import SweetAlert from 'react-native-sweet-alert';
+import { color } from 'react-native-reanimated';
 
 export default function Login({ navigation }) {
 
@@ -85,7 +86,7 @@ export default function Login({ navigation }) {
 
   return (
 
-    <ScrollView style={{ flex: 1, backgroundColor: colors.tertiary, position: 'relative' }}>
+    <ScrollView style={{ flex: 1, backgroundColor: colors.white, position:"relative"}}>
 
 
 
@@ -93,38 +94,49 @@ export default function Login({ navigation }) {
       <View style={{
         justifyContent: 'center',
         alignItems: 'center',
+      
+       
         
       }}>
-        <Animated.Image source={require('../../assets/icon.png')} style={{
+    <ImageBackground style={{
+      flex:1,
+      height:'100%',
+        width:'100%',
+        justifyContent:'center',
+        alignItems:"center"
+    }} source={require('../../assets/bgimglogin.png')}>
+    <Animated.Image source={require('../../assets/nikmatour.png')} style={{
           marginTop: 10,
           width: windowWidth / 1.9,
           height: windowWidth / 1.9,
           resizeMode: 'contain'
         }} />
-
+    </ImageBackground>
       </View>
 
-
-      <Animated.View style={{
+        <ScrollView style={{flex:1, backgroundColor:colors.primary, borderTopRightRadius:50, borderTopLeftRadius:50, position:'relative'}}>
+        <Animated.View style={{
         padding: 20,
         flex: 1, margin: 10,
         bottom: card,
         borderRadius: 10,
+      
       }}>
-        <Text style={{
-          fontSize: MyDimensi / 2,
-          fontFamily: fonts.primary[800],
-          color: colors.primary,
-        }}>Selamat Datang</Text>
-        <Text style={{
-          fontSize: MyDimensi / 4,
-          fontFamily: fonts.primary[400],
-          color: colors.primary,
-          marginBottom: 10,
-        }}>Silahkan login terlebih dahulu</Text>
 
+        <Text style={{
+          textAlign:'center',
+          fontFamily:fonts.primary[600],
+          fontSize:MyDimensi / 2.5,
+          marginTop: -25
+        }}>
+          LOGIN
+        </Text>
+      
 
         {/* USERNAME INPUT */}
+
+        
+        <MyGap jarak={50} />
    
         <MyInput label="Username" iconname="person" placeholder="Masukan username" />
 
@@ -146,14 +158,19 @@ export default function Login({ navigation }) {
           <Text style={{
             textAlign: 'right',
             fontFamily: fonts.secondary[600],
-            color: colors.tertiary,
-            fontSize: MyDimensi / 4
+            color: colors.black,
+            fontSize: MyDimensi / 4,
+            marginTop:10,
+            
           }}>Lupa password ?</Text>
         </TouchableOpacity>
+
+        <MyGap jarak={40}/>
         <MyGap jarak={0} />
         {!loading &&
 
 
+     
 
 
           <MyButton
@@ -170,7 +187,7 @@ export default function Login({ navigation }) {
         {!loading && <TouchableWithoutFeedback onPress={() => navigation.navigate('Register')}>
           <View style={{
             marginTop: 10,
-            backgroundColor: colors.tertiary,
+            backgroundColor: colors.primary,
             justifyContent: 'center',
             alignItems: 'center'
           }}>
@@ -178,17 +195,23 @@ export default function Login({ navigation }) {
               fontSize: MyDimensi / 4,
               fontFamily: fonts.primary[400],
               textAlign: 'center',
-              color: colors.primary
+              color: colors.black
             }}>Belum memiliki Akun ? <Text style={{
               fontSize: MyDimensi / 4,
               fontFamily: fonts.primary[600],
               textAlign: 'center',
-              color: colors.foourty
+              color: colors.black
             }}>Daftar disini</Text></Text>
           </View>
         </TouchableWithoutFeedback>}
 
       </Animated.View>
+      <View style={{marginTop:'100%'}}>
+
+      </View>
+        </ScrollView>
+
+      
 
 
       {loading && <View style={{

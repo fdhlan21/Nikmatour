@@ -6,5 +6,9 @@ import MyPicker from './MyPicker';
 import MyCalendar from './MyCalendar';
 import BottomNavigator from './BottomNavigator'
 import MyRadio from './MyRadio';
+import MyInputSecond from './MyInputSecond';
+import MyButtonSecond from './MyButtonSecond';
 
-export { MyGap, MyButton, MyInput, MyHeader, MyPicker, MyCalendar, BottomNavigator, MyRadio };
+
+
+export { MyGap, MyButton, MyInput, MyHeader, MyPicker, MyCalendar, BottomNavigator, MyRadio,MyInputSecond,MyButtonSecond };

@@ -28,6 +28,16 @@ import Diagnosa2 from './Diagnosa/index2';
 import Periksagigimu from './Ayoperiksagigimu';
 import Gigilubang from './gigilubang';
 import TumpatanGigi from './TumpatanGigi';
+import PaketUmrah from './paketumroh';
+import Pendaftaran from './Pendaftaran';
+import UpdateSeat from './Home/UpdateSeat';
+import Pembayaran from './pembayaran';
+import Saldoku from './Saldoku';
+import DataJamaah from './DataJamaah';
+import DataJamaah2 from './DataJamaah/ndex2';
+import Royalti from './Royalti';
+
+
 
 
 
@@ -50,6 +60,20 @@ export {
   Periksagigimu,
   Gigilubang,
   TumpatanGigi,
+  PaketUmrah,
+  Pendaftaran,
+  UpdateSeat,
+  Pembayaran,
+  Saldoku,
+  DataJamaah,
+  DataJamaah2,
+  Royalti,
+
+  
+  
+  
+
+
 
 
   Account,

@@ -87,93 +87,287 @@ export default function Home({ navigation, route }) {
 
   return (
 
-    <SafeAreaView style={{
-      flex: 1,
-      backgroundColor: colors.background,
-      position: 'relative'
+    <ImageBackground source={require('../../assets/homebg.png')} style={{
+      flex:1,
+      width:"100%",
+      height:"100%",
+  
+      backgroundColor:colors.black,
+
+    
+
     }}>
 
+    {/* HEADERS */}
+    <View style={{
+      flexDirection:"row",
+      backgroundColor:"white",
+      padding:10,
+      borderBottomLeftRadius:5,
+      borderBottomRightRadius:5,
+      justifyContent:'space-between'
 
-    {/* HEADER */}
 
-    <View style={{padding:10, backgroundColor:colors.tertiary, borderBottomRightRadius:10, borderBottomLeftRadius:10}}>
-      <View style={{flexDirection:"row", backgroundColor:colors.tertiary, justifyContent:"space-between", }}>
-        <View style={{alignItems:'center', justifyContent:"center"}}>
-          <Text style={{fontFamily:fonts.primary[600], color:colors.primary, fontSize: MyDimensi/4.5}}>Selamat Datang di Aplikasi GEISKA,{'\n'}Ayo kita mulai, Fadhlan</Text>
+    }}>
+
+    <View>
+      <Text style={{
+        fontFamily:fonts.primary[800]
+
+      }}>Selamat Datang,</Text>
+      <Text style={{fontFamily:fonts.primary[400]}}>
+        Fadhlan Himawan
+      </Text>
+    </View>
+
+    <View>
+      <TouchableNativeFeedback >
+        <View style={{flexDirection:"row", padding:10, borderWidth:1, borderRadius:50, borderColor:"#cccccc"}}>
+        <Text style={{
+          fontFamily:fonts.primary[600],
+          marginRight:10,
+
+        }}>
+          Logout
+        </Text>
+          <Image source={require('../../assets/logout.png')} style={{
+            width:21, height:21,
+          }}
+          />
         </View>
-        <View>
-            {/* NANTI DISINI AKANTAMPIL ICON LAKI LAKI DAN PEREMPUAN, DISINI SAYA MASUKAN CONTOH ICON LAKI LAKI TERLEBIH DAHULU */}
-            <Image source={require('../../assets/boy.png')} style={{height:72, width:70, }} />
-        </View>
-      </View>
+
+      </TouchableNativeFeedback>
+    </View>
 
     </View>
 
-    {/* END HEADER */}
+    <ScrollView>
+{/* MAIN CONTRNT */}
+<View style={{padding:10,}}>
 
+<MyCarouser/>
 
-  {/* MAIN CONTENT */}
+{/* MENU 1 */}
+<View style={{flexDirection:"row", padding:10, justifyContent:"space-around"}}>
 
- 
-
-  {/* SKOR  */}
-  <View style={{padding:10, marginTop:10}}>
-  <MyCarouser/>
-
- 
-
-              {/* MAIN MENU */}
-              <View style={{marginTop:20}}>
-
-                  <View>
-
-                  <TouchableNativeFeedback style={{padding:10, backgroundColor:colors.tertiary, }} onPress={() => navigation.navigate('Diagnosa')}>
-                    <View style={{backgroundColor:colors.tertiary, padding:10, borderRadius:10, flexDirection:"row",
-                    justifyContent:'space-between'}}>
-                        <Image source={require('../../assets/diagnosis.png')} style={{
-                          height:100, width:100,
-                        
-
-                        }}/>
-                        <Text style={{
-                          color:colors.primary, 
-                          fontFamily:fonts.primary[600], 
-                          fontSize:MyDimensi/2, 
-                          textAlign:"center",
-                          alignSelf:"center", 
-                          left: -50}}>Diagnosa</Text>
-                    </View>
-                  </TouchableNativeFeedback>
-
-                    <MyGap jarak={20}/>
-
-                  <TouchableNativeFeedback style={{padding:10, backgroundColor:colors.tertiary, }}  onPress={() => navigation.navigate('Periksagigimu')}>
-                    <View style={{backgroundColor:colors.tertiary, padding:10, borderRadius:10, flexDirection:"row",
-                    justifyContent:'space-between'}}>
-                        <Image source={require('../../assets/dental.png')} style={{
-                          height:100, width:100,
-                        
-
-                        }}/>
-                        <Text style={{
-                          color:colors.primary, 
-                          fontFamily:fonts.primary[600], 
-                          fontSize:MyDimensi/2.5, 
-                          textAlign:"center",
-                          alignSelf:"center", 
-                          left: -45}}>Ayo Periksa{'\n'}Gigimu</Text>
-                    </View>
-                  </TouchableNativeFeedback>
-
-                  </View>
-
-              </View>
+{/* 1 */}
+<TouchableNativeFeedback onPress={() => navigation.navigate('PaketUmroh')}>
+  <View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+  width:100, height:97.4, borderWidth:1, borderColor:"white",
+  justifyContent:"center", alignItems:"center", }}>
+    <Image source={require('../../assets/pakethajiumroh.png')} style={{
+      height:50,
+      width:50,
+      top:21
+    
+    }}/>
+    <Text style={{
+      color:"white",
+      textAlign:"center",
+      fontSize: MyDimensi / 5.1,
+      fontFamily:fonts.primary[400],
+      top: 50
+      
+     
+     
+    }}>
+    Paket Haji & Umroh
+    </Text>
   </View>
 
+</TouchableNativeFeedback>
 
-  {/* END MAIN CONTENT */}
+ {/* 2 */}
+ <TouchableNativeFeedback onPress={() => navigation.navigate('Pendaftaran')}>
+  <View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+  width:100, height:97.4, borderWidth:1, borderColor:"white",
+  justifyContent:"center", alignItems:"center", }}>
+    <Image source={require('../../assets/pendaftaran.png')} style={{
+      height:50,
+      width:50,
+      top:21,
+    
+    }}/>
+    <Text style={{
+      color:"white",
+      textAlign:"center",
+      fontSize: MyDimensi / 5.1,
+      fontFamily:fonts.primary[400],
+      top:40
+      
+     
+    }}>
+    Pendaftaran
+    </Text>
+  </View>
 
-    </SafeAreaView >
+</TouchableNativeFeedback>
+
+ {/* 3 */}
+ <TouchableNativeFeedback onPress={() => navigation.navigate('UpdateSeat')}>
+  <View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+  width:100, height:97.4, borderWidth:1, borderColor:"white",
+  justifyContent:"center", alignItems:"center", }}>
+    <Image source={require('../../assets/updateseat.png')} style={{
+      height:50,
+      width:50,
+      top:15,
+
+    
+    }}/>
+    <Text style={{
+      color:"white",
+      textAlign:"center",
+      fontSize: MyDimensi / 5.1,
+      fontFamily:fonts.primary[400],
+      top:40
+      
+     
+    }}>
+    Update Seat
+    </Text>
+  </View>
+
+</TouchableNativeFeedback>
+
+
+</View>
+
+    <MyGap jarak={50}/>
+
+  {/* MENU 2 */}
+  <View style={{flexDirection:"row", padding:10, justifyContent:"space-around"}}>
+
+{/* 1 */}
+<TouchableNativeFeedback onPress={() => navigation.navigate('Saldoku')}>
+<View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+width:100, height:97.4, borderWidth:1, borderColor:"white",
+justifyContent:"center", alignItems:"center", }}>
+<Image source={require('../../assets/saldoku.png')} style={{
+height:50,
+width:50,
+top:10
+
+}}/>
+<Text style={{
+color:"white",
+textAlign:"center",
+fontSize: MyDimensi / 5.1,
+fontFamily:fonts.primary[400],
+top: 40,
+
+
+
+}}>
+Saldoku
+</Text>
+</View>
+
+</TouchableNativeFeedback>
+
+{/* 2 */}
+<TouchableNativeFeedback onPress={() => navigation.navigate('Datajamaah')}>
+<View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+width:100, height:97.4, borderWidth:1, borderColor:"white",
+justifyContent:"center", alignItems:"center", }}>
+<Image source={require('../../assets/datajamaah.png')} style={{
+height:50,
+width:50,
+top:21
+
+}}/>
+<Text style={{
+color:"white",
+textAlign:"center",
+fontSize: MyDimensi / 5.1,
+fontFamily:fonts.primary[400],
+top: 50
+
+
+}}>
+Data Jamaah
+</Text>
+</View>
+
+</TouchableNativeFeedback>
+
+{/* 1 */}
+<TouchableNativeFeedback onPress={() => navigation.navigate('Pembayaran')}>
+<View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+width:100, height:97.4, borderWidth:1, borderColor:"white",
+justifyContent:"center", alignItems:"center", }}>
+<Image source={require('../../assets/payment.png')} style={{
+height:50,
+width:50,
+top:10
+
+}}/>
+<Text style={{
+color:"white",
+textAlign:"center",
+fontSize: MyDimensi / 5.1,
+fontFamily:fonts.primary[400],
+top:41
+
+
+
+}}>
+Payment
+</Text>
+</View>
+
+</TouchableNativeFeedback>
+
+
+</View>
+
+<MyGap jarak={50}/>
+
+
+  {/* MENU 3 */}
+  <View style={{flexDirection:"row", padding:10, justifyContent:"flex-start"}}>
+
+{/* 1 */}
+<TouchableNativeFeedback onPress={() => navigation.navigate('Royalti')}>
+<View style={{padding:10, backgroundColor:colors.primary, borderRadius:20,
+width:100, height:97.4, borderWidth:1, borderColor:"white",
+justifyContent:"center", alignItems:"center", }}>
+<Image source={require('../../assets/royalti.png')} style={{
+height:50,
+width:50,
+top:10
+
+}}/>
+<Text style={{
+color:"white",
+textAlign:"center",
+fontSize: MyDimensi / 5.1,
+fontFamily:fonts.primary[400],
+top: 40,
+
+
+
+}}>
+Royalti
+</Text>
+</View>
+
+</TouchableNativeFeedback>
+
+
+</View>
+
+
+
+</View>
+
+<MyGap jarak={50}/>
+    </ScrollView>
+
+
+
+    </ImageBackground>
+  
   )
 }
 

@@ -28,7 +28,7 @@ export default function MyInput({
   multiline,
   label2,
   styleLabel,
-  colorIcon = colors.primary,
+  colorIcon = colors.black,
 }) {
 
   const [tutup, setTutup] = useState(true);
@@ -77,9 +77,7 @@ export default function MyInput({
           autoCapitalize="none"
           style={{
             backgroundColor: backgroundColor,
-            borderColor: borderColor,
             borderRadius: 10,
-            borderWidth: borderWidth,
             paddingLeft: 20,
             color: textColor,
             fontSize: MyDimensi / 4,

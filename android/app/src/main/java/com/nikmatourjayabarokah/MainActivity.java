@@ -1,4 +1,4 @@
-package com.geiska;
+package com.nikmatourjayabarokah;
 
 import com.facebook.react.ReactActivity;
 

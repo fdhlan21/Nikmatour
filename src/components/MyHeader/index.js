@@ -12,7 +12,7 @@ export default function MyHeader({ onPress, judul }) {
 
     <View style={{
       flexDirection: 'row',
-      backgroundColor: colors.foourty,
+      backgroundColor: colors.white,
       padding: 5,
       height: 60,
       marginBottom: 10,
@@ -28,7 +28,7 @@ export default function MyHeader({ onPress, judul }) {
         borderRadius: 20,
         borderColor: colors.border,
       }}>
-        <Icon type='ionicon' name='chevron-back-outline' size={MyDimensi / 2} color={colors.primary} />
+        <Icon type='ionicon' name='chevron-back-outline' size={MyDimensi / 2} color={colors.black} />
       </TouchableOpacity>
       <Text style={{
         flex: 1,
@@ -36,7 +36,7 @@ export default function MyHeader({ onPress, judul }) {
         textAlign: 'center',
         fontFamily: fonts.primary[600],
         fontSize: MyDimensi / 4.5,
-        color: colors.white
+        color: colors.black
       }}>{judul}</Text>
     </View>
 

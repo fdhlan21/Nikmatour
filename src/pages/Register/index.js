@@ -24,6 +24,7 @@ import DatePicker from 'react-native-datepicker'
 import moment from 'moment';
 import { Icon } from 'react-native-elements';
 import SweetAlert from 'react-native-sweet-alert';
+import { color } from 'react-native-reanimated';
 
 export default function Register({ navigation }) {
 
@@ -119,14 +120,33 @@ export default function Register({ navigation }) {
 
 
     return (
-        <>
-            <ImageBackground
+        
+            <ScrollView
                 style={{
                     flex: 1,
-                    backgroundColor: colors.tertiary,
-                    padding: 10,
-                    position: 'relative'
+                    backgroundColor: colors.white,
+                  
+                    position: 'relative',
+                    
+                    
                 }}>
+
+                <View style={{flex:1,}}>
+                   <ImageBackground source={require('../../assets/bgimglogin.png')} style={{
+                    flex:1,
+                    height:'100%',
+                    width:'100%',
+                    justifyContent:'center',
+                    alignItems:'center'
+                   }}>
+                        <Image source={require('../../assets/nikmatour.png')} style={{
+                                     marginTop: 10,
+          width: windowWidth / 1.9,
+          height: windowWidth / 1.9,
+          resizeMode: 'contain'
+                        }}/>
+                   </ImageBackground> 
+                </View>
 
                 {/* <Switch onValueChange={toggleSwitch} value={isEnabled} /> */}
                 <ScrollView showsVerticalScrollIndicator={false} style={styles.page}>
@@ -138,10 +158,11 @@ export default function Register({ navigation }) {
                         paddingHorizontal: 0,
                     }}>
                         <Text style={{
-                            fontSize: MyDimensi / 2,
-                            fontFamily: fonts.primary[800],
-                            color: colors.primary,
-                        }}>Daftar</Text>
+                            fontSize: MyDimensi / 2.5,
+                            fontFamily: fonts.primary[600],
+                            color: colors.black,
+                            textAlign:'center'
+                        }}>REGISTER</Text>
                         <Text style={{
                             fontSize: MyDimensi / 4,
                             fontFamily: fonts.primary[400],
@@ -149,30 +170,28 @@ export default function Register({ navigation }) {
                             marginBottom: 10,
                         }}>Silahkan daftar agar bisa login</Text>
 
+                            {/* NAMA LENGKAP */}
+                            <MyInput label='Nama Lengkap' iconname='person' placeholder='Nama Lengkap'/>
+                            <MyGap jarak={20}/>
 
-                        {/* INPUT NAMA */}
-                        <MyInput label="Nama Lengkap" iconname='person' placeholder='Nama Lengkap...'/>
+                            {/* USERNAME */}
+                            <MyInput label='Username' iconname='person' placeholder='Username'/>
+                            <MyGap jarak={20}/>
 
-                        {/* INPUT USERNAME */}
-                        <MyGap jarak={20}/>
-                        <MyInput label="Username" iconname="person" placeholder='Username...'/>
+                            {/* NOMOR TELEPON */}
+                            <MyInput label='Nomor Telephone' iconname='call' placeholder='Nomor Telephone'/>
+                            <MyGap jarak={20}/>
 
+                            
+                            {/* ALAMAT */}
+                            <MyInput label='Alamat' iconname='home' placeholder='Alamat Lengkap'/>
+                            <MyGap jarak={20}/>
 
-                        {/* MEMILIH JENIS KELAMIN */}   
-                        <MyGap jarak={20}/>
-                        <MyPicker label="Jenis Kelamin" iconname="transgender" data={[
-                           {
-                            label:'Laki-laki',
-                            value:'laki-laki',
-                           },
-                           {
-                            label:'Perempuan',
-                            value:'perempuan'
-                           }
-                        ]}/>
-
+                                 
+                            {/* TANGGAL LAHIR */}
+                            <MyCalendar label='Tanggal Lahir' placeholder='Tanggal Lahir' iconname='calendar'/>
+                            <MyGap jarak={20}/>
                         {/*INPUT KATA SANDI */}
-                        <MyGap jarak={20}/>
                         <MyInput
                             placeholder="Kata Sandi..."
                             label="Kata Sandi"
@@ -243,9 +262,8 @@ export default function Register({ navigation }) {
                     </View>}
                 </ScrollView>
 
-            </ImageBackground>
+            </ScrollView>
 
-        </>
     );
 }
 
@@ -253,6 +271,11 @@ const styles = StyleSheet.create({
     page: {
         flex: 1,
         padding: 10,
+        position:'relative',
+        backgroundColor:colors.primary,
+     borderTopRightRadius:50,
+     borderTopLeftRadius:50,
+
     },
     image: {
         width: 620 / 4,

@@ -30,8 +30,8 @@ export default function MyPicker({
         <Icon type="ionicon" name={iconname} color={colors.primary} size={MyDimensi / 4} />
         <Text
           style={{
-            fontFamily: fonts.primary[600],
-            color: colors.primary,
+            fontFamily: fonts.primary[400],
+            color: colors.white,
             left: 10,
             fontSize: MyDimensi / 4,
             ...styleLabel,
@@ -46,7 +46,7 @@ export default function MyPicker({
         backgroundColor: colors.white,
         borderRadius: 10,
         marginTop: 5,
-        fontFamily: fonts.secondary[600],
+        fontFamily: fonts.secondary[400],
 
       }}>
         <Picker style={{ height: 48, transform: [{ scale: 0.9 }] }}

@@ -12,6 +12,7 @@ import {
 import { MyButton, MyGap } from '../../components';
 import { MyDimensi, colors, fonts, windowHeight, windowWidth } from '../../utils';
 import { MYAPP, getData } from '../../utils/localStorage';
+import { BackgroundImage } from 'react-native-elements/dist/config';
 
 export default function Splash({ navigation }) {
 
@@ -33,7 +34,7 @@ export default function Splash({ navigation }) {
     setTimeout(() => {
       getData('user').then(res => {
         if (!res) {
-          navigation.replace('Register')
+          navigation.replace('Login')
         } else {
           // navigation.replace('GetStarted')
           navigation.replace('MainApp')
@@ -46,7 +47,7 @@ export default function Splash({ navigation }) {
     <SafeAreaView style={{
       flex: 1,
       padding: 0,
-      backgroundColor: colors.primary,
+      backgroundColor: colors.white,
       justifyContent: 'center',
       position: 'relative'
 
@@ -57,10 +58,19 @@ export default function Splash({ navigation }) {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:colors.tertiary
+        backgroundColor:colors.white
+      
       }}>
-        <Animated.Image
-          source={require('../../assets/icon.png')}
+     <ImageBackground source={require('../../assets/bgsplash.png')} style={{
+      flex:1,
+      width:'100%',
+      height:'100%',
+      justifyContent: 'center',
+    alignItems: 'center',
+    
+     }}>
+     <Animated.Image
+          source={require('../../assets/nikmatour.png')}
           resizeMode="contain"
           style={{
             width: img,
@@ -77,6 +87,7 @@ export default function Splash({ navigation }) {
         }}>Monitoring Asupan MPASI</Animated.Text> */}
 
         <ActivityIndicator color={colors.secondary} size="large" />
+     </ImageBackground>
       </View>
 
 

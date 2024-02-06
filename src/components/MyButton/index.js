@@ -6,7 +6,7 @@ import { colors } from '../../utils';
 
 export default function MyButton({
   title,
-  warna = colors.foourty,
+  warna = colors.black,
   onPress,
   Icons,
   radius = 10,
@@ -15,7 +15,7 @@ export default function MyButton({
   iconColor = colors.white,
   borderSize = 0,
   kiri = true,
-  borderColor = colors.primary,
+  borderColor = colors.black,
 }) {
   return (
     <TouchableOpacity
